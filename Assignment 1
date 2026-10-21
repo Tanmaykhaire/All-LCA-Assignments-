@@ -1,0 +1,47 @@
+# ==========================================
+# 1. DICTIONARY OPERATIONS (Mutable)
+# ==========================================
+print("--- Dictionary Operations ---")
+
+# CREATE: Initialize a dictionary with key-value pairs
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+print(f"Original Dictionary: {my_dict}")
+
+# APPEND / ADD: Insert a new key-value pair or update an existing one
+my_dict["job"] = "Engineer"  # Adding a new key
+my_dict.update({"salary": 70000})  # Adding using update() method
+print(f"Dictionary after Adding/Appending: {my_dict}")
+
+# REMOVE: Remove items using various methods
+# Method A: Using pop() to remove a specific key and return its value
+removed_value = my_dict.pop("city")
+print(f"Removed Value ('city'): {removed_value}")
+
+# Method B: Using 'del' keyword to remove a specific key
+del my_dict["age"]
+
+print(f"Dictionary after Removal Operations: {my_dict}\n")
+
+
+# ==========================================
+# 2. TUPLE OPERATIONS (Immutable)
+# ==========================================
+print("--- Tuple Operations ---")
+
+# CREATE: Initialize a tuple with values
+my_tuple = ("apple", "banana", "cherry")
+print(f"Original Tuple: {my_tuple}")
+
+# APPEND: Tuples cannot be modified directly. 
+# Workaround: Convert to list, append, and convert back to tuple.
+temp_list = list(my_tuple)
+temp_list.append("orange")
+my_tuple = tuple(temp_list)
+print(f"Tuple after Appending: {my_tuple}")
+
+# REMOVE: Tuples do not support item removal.
+# Workaround: Convert to list, remove, and convert back to tuple.
+temp_list = list(my_tuple)
+temp_list.remove("banana")  # Removes the first occurrence of 'banana'
+my_tuple = tuple(temp_list)
+print(f"Tuple after Removing 'banana': {my_tuple}")
