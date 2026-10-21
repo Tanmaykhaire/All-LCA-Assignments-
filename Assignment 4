@@ -1,0 +1,39 @@
+import numpy as np
+
+# Define two 3x3 matrices using standard Python lists
+matrix_A = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matrix_B = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+print("--- METHOD 1: Using Standard Python Lists ---")
+# Initialize a result matrix with zeros matching the dimensions of matrix_A
+list_result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+# Perform addition using nested loops
+for i in range(len(matrix_A)):          # Iterate through rows
+    for j in range(len(matrix_A[0])):   # Iterate through columns
+        list_result[i][j] = matrix_A[i][j] + matrix_B[i][j]
+
+# Display the list-based result
+for row in list_result:
+    print(row)
+
+
+print("\n--- METHOD 2: Using NumPy Arrays ---")
+# Convert the Python lists into NumPy arrays
+numpy_A = np.array(matrix_A)
+numpy_B = np.array(matrix_B)
+
+# Perform element-wise matrix addition directly using the '+' operator
+numpy_result = numpy_A + numpy_B
+
+# Display the NumPy-based result
+print(numpy_result)
